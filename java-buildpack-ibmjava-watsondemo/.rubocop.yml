@@ -1,0 +1,51 @@
+---
+require: rubocop-rspec
+
+AllCops:
+  Include:
+  - '**/Rakefile'
+  - 'rakelib/**/*'
+  Exclude:
+  - 'build/**/*'
+Metrics/AbcSize:
+ Max: 22
+Metrics/BlockLength:
+  Exclude:
+  - 'spec/**/*.rb'
+Metrics/ClassLength:
+  Max: 250
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/LineLength:
+  Max: 120
+Metrics/MethodLength:
+  Max: 18
+Metrics/ParameterLists:
+  Max: 6
+Metrics/PerceivedComplexity:
+  Max: 10
+RSpec/ExampleLength:
+  Max: 20
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/ExpectOutput:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 4
+Style/Documentation:
+  Enabled: false
+Style/EmptyLinesAroundBlockBody:
+  Exclude:
+  - 'spec/**/*.rb'
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+Style/MethodMissing:
+  Enabled: false
+Style/MultilineOperationIndentation:
+  Enabled: false
