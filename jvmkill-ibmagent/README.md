@@ -1,3 +1,7 @@
+This project is fork of [JVM kill agent of cloudfoundry](https://github.com/cloudfoundry/jvmkill) with some changes required to work with IBM® SDK, Java™ Technology Edition.
+
+This is being **temporarily hosted** here as a support for jvmkill agent for IBM Java to work along with **CloudFoundry Java Buildpack** as the IBM Java has a bug and does not work with the [JVM kill agent of cloudfoundry](https://github.com/cloudfoundry/jvmkill). This repo will be removed once the bug is fixed.
+
 [Concourse Pipeline](https://java-experience.ci.springapps.io/pipelines/jvmkill)
 
 # Overview
