@@ -15,6 +15,7 @@
 
 package com.ibm.beans;
 
+//bean class for holding the text entered by the user
 public class Text {
 	String Text;
 

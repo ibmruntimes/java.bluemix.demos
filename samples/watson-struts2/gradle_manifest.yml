@@ -22,7 +22,7 @@ applications:
 env:
   FACEAPIKEY: 
   TEXTPASSWORD: 
-  TEXTUSERNAME:  
+  TEXTUSERNAME: 
   JBP_CONFIG_COMPONENTS: '{jres: ["JavaBuildpack::Jre::IbmjavaJRE"]}'
 
 

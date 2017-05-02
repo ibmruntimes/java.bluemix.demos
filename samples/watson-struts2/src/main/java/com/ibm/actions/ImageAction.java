@@ -39,12 +39,11 @@ public class ImageAction {
 		this.img = img;
 	}
 
-
+	//method for detecting faces
 	public String execute(){
 		try{
 			System.out.println(img.getUrl());
 			VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
-//			service.setApiKey("237c89fe498bd97b337b0246d8604537cf35b984");
 			System.out.println(FACEAPIKEY);
 			service.setApiKey(FACEAPIKEY);
 			System.out.println("Detect faces");
