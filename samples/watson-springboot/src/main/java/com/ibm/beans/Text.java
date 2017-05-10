@@ -13,9 +13,10 @@
  // See the License for the specific language governing permissions and
  // limitations under the License.
 
-//bean class for holding the text entered by the user
+
 package com.ibm.beans;
 
+//bean class for holding the text entered by the user
 public class Text {
 	String Text;
 

@@ -15,6 +15,7 @@
 
 package com.ibm.beans;
 
+//bean class for holding the predicted details of the image
 public class ImgDetail {
 	String url;
 	String name;

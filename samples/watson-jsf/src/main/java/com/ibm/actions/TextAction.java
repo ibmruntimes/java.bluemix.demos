@@ -67,6 +67,8 @@ public class TextAction {
 		audioStr="";
 		return "textHome";
 	}
+	
+	//method for converting text to audio file and make it available for download 
 	public void download() {
 		System.out.println("Download");
 		TextToSpeech service = new TextToSpeech();
@@ -100,6 +102,7 @@ public class TextAction {
 
 	}
 	
+	//method for converting text to audio stream
 	public void speak() {
 		System.out.println("Speak");
 		TextToSpeech service = new TextToSpeech();

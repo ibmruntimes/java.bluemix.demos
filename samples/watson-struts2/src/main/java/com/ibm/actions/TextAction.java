@@ -42,9 +42,9 @@ public class TextAction {
 		this.text = text;
 	}
 	
+	//method for converting text to speech
 	public String execute(){
 		TextToSpeech service = new TextToSpeech();
-//		service.setUsernameAndPassword("7759c1e2-4ca9-4e1b-9fad-7544188fc645", "8b5qJv6ubIAf");
 		System.out.println("text");
 		System.out.println(text);
 		service.setUsernameAndPassword(TEXTUSERNAME,TEXTPASSWORD);

@@ -46,28 +46,32 @@ public class WatsonController {
 	String TEXTUSERNAME;
 	String TEXTPASSWORD;
 	
+	//constructor for initializing the watson service credentials
 	public WatsonController(){
 		FACEAPIKEY= System.getenv("FACEAPIKEY");
 		TEXTUSERNAME= System.getenv("TEXTUSERNAME");
 		TEXTPASSWORD= System.getenv("TEXTPASSWORD");
 		
 	}
+
+	//method for redirecting to homepage
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		return "index";
 	}
 	
+	//method for redirecting to face detection homepage
 	@RequestMapping(value = "/image", method = RequestMethod.GET)
 	public ModelAndView image() {
 		return new ModelAndView("imageHome", "command", new ImgDetail());
 	}
 
+	//method for detecting faces
 	@RequestMapping(value = "/imageprocess", method = RequestMethod.POST)
 	public ModelAndView processimage(@ModelAttribute("SpringWeb") ImgDetail img) {
 		try{
 		System.out.println(img.getUrl());
 		VisualRecognition service = new VisualRecognition(VisualRecognition.VERSION_DATE_2016_05_20);
-//		service.setApiKey("237c89fe498bd97b337b0246d8604537cf35b984");
 		System.out.println(FACEAPIKEY);
 		service.setApiKey(FACEAPIKEY);
 		System.out.println("Detect faces");
@@ -108,17 +112,18 @@ public class WatsonController {
 
 	}
 
+	//redirecting to the text to speech homepage
 	@RequestMapping(value = "/text", method = RequestMethod.GET)
 	public ModelAndView text() {
 		return new ModelAndView("textHome", "command", new Text());
 	}
-
+	
+	//method for converting text to speech
 	@RequestMapping(value = "/textprocess", method = RequestMethod.GET)
 	public void processtext(@ModelAttribute("Spring") Text txt, HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
 
 		TextToSpeech service = new TextToSpeech();
-//		service.setUsernameAndPassword("7759c1e2-4ca9-4e1b-9fad-7544188fc645", "8b5qJv6ubIAf");
 		service.setUsernameAndPassword(TEXTUSERNAME,TEXTPASSWORD);
 		try {
 
