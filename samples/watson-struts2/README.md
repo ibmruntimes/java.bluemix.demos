@@ -1,4 +1,4 @@
-This folder contains the source files of the sample application built using Struts 2 web framework.
+This folder contains the source files of the sample application built using **Struts 2 web framework**.
    
 The application can be build using either *Maven* or *Gradle*.  
    
