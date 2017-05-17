@@ -1,4 +1,4 @@
-This folder contains the source files of the sample application built using Spring Boot.
+This folder contains the source files of the sample application built using **Spring Boot**.
    
 The application can be build using either *Maven* or *Gradle*.  
    
