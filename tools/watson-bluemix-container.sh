@@ -21,14 +21,14 @@ set -eo pipefail
 echo "pulling the maven image"
 docker pull ibmcom/ibmjava:8-maven
 
-pushd java.bluemix.demos/samples/watson-springboot
+pushd ../samples/watson-springboot
 
 echo "building the app using maven"
 docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn package
 
 popd
 
-docker build -t registry.ng.bluemix.net/ibmtest01/watson-springboot java.bluemix.demos/samples
+docker build -t registry.ng.bluemix.net/ibmtest01/watson-springboot ../samples
 
 # cf login -a https://api.ng.bluemix.net
 
