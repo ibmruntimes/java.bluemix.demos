@@ -30,7 +30,7 @@ docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn 
 
 popd
 
-docker build -t registry.ng.bluemix.net/ibmtest01/watson-springboot ../samples
+docker build -t registry.ng.bluemix.net/ibmtest01/watson-springboot $rootdir/samples
 
 # cf login -a https://api.ng.bluemix.net
 
