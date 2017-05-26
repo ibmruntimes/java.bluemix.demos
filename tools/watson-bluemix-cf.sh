@@ -18,10 +18,12 @@ set -eo pipefail
 
 # git clone https://github.com/ibmruntimes/java.bluemix.demos.git
 
+rootdir=".."
+
 echo "pulling the maven image"
 docker pull ibmcom/ibmjava:8-maven
 
-pushd java.bluemix.demos/samples/watson-springboot
+pushd $rootdir/samples/watson-springboot
 
 echo "building the app using maven"
 docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn package
@@ -30,3 +32,5 @@ docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn 
 
 echo "pushing the app"
 cf push -f maven_manifest.yml
+
+popd
