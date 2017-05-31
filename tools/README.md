@@ -18,7 +18,7 @@ Note: Before running any scripts follow the instruction in README of sample fold
    This scripts deploys the sample application to Kubernetes clusters on Bluemix. The script first builds the image of the application locally and then pushes it to the *IBM Bluemix Container Registry*. It then configures the cluster and creates a *Kubernetes deployment* using the image of the application and finally the deployment is exposed as *NodePort service* so that it is applicable to the outside world.Before running the script move into the `sample` directory  and open `Dockerfile` with a text editor and edit the following values with the credential obtained by you:<br/>
    - `FACEAPIKEY= <api_key>\`
    - `TEXTPASSWORD= <password>\`
-   - `TEXTUSERNAME= <username>`
+   - `TEXTUSERNAME= <username>`<br/>
    Now run the following commands to create a cluster (the creation of cluster can take upto 20 minutes).
    1. `bx login`
    2. `bx cs init`
