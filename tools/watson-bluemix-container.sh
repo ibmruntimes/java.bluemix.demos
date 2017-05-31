@@ -14,31 +14,54 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+tool_dir="$(dirname "$0")"
+source "$tool_dir/common-functions.sh"
+
 set -eo pipefail
 
-# git clone https://github.com/ibmruntimes/java.bluemix.demos.git
+checkContainerPlugin(){
+	if ! bx plugin list |grep -w "IBM-Containers" > /dev/null; then
+		echo "IBM-Containers Plugin is not installed. Run bx plugin install IBM-Containers -r Bluemix"
+		exit 1
+	fi
+}
+
+getAppUrl(){
+	ip=$(bx ic ip-request)
+	ip=$(echo $ip |cut -d\" -f2)
+	bx ic ip-bind $ip watson-springboot
+	url="visit http://$ip:8080 to access the app after few minutes"
+	echo $url
+}
 
 rootdir=".."
 
-echo "pulling the maven image"
-docker pull ibmcom/ibmjava:8-maven
+# git clone https://github.com/ibmruntimes/java.bluemix.demos.git
+
+checkDocker
+checkCFCLI
+checkBluemixCLI
+checkContainerPlugin
+
+pullMavenImage
 
 pushd $rootdir/samples/watson-springboot
-
-echo "building the app using maven"
-docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn package
-
+mavenCompileApp
 popd
 
+echo "creating image from the dockerfile"
 docker build -t registry.ng.bluemix.net/ibmtest01/watson-springboot $rootdir/samples
 
-# cf login -a https://api.ng.bluemix.net
+checkLogin
+# bx login -a https://api.ng.bluemix.net
 
-# cf ic login
+# bx ic init
 
 echo "pushing the image to bluemix"
 docker push registry.ng.bluemix.net/ibmtest01/watson-springboot
 
 echo "starting the app"
-cf ic run -p 8080:8080 --name watson-springboot registry.ng.bluemix.net/ibmtest01/watson-springboot
+bx ic run -p 8080:8080 --name watson-springboot registry.ng.bluemix.net/ibmtest01/watson-springboot
 
+getAppUrl
