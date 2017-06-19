@@ -14,23 +14,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 set -eo pipefail
 
-# git clone https://github.com/ibmruntimes/java.bluemix.demos.git
+tool_dir="$(dirname "$0")"
+source "$tool_dir/common_functions.sh"
 
 rootdir=".."
 
-echo "pulling the maven image"
-docker pull ibmcom/ibmjava:8-maven
+# git clone https://github.com/ibmruntimes/java.bluemix.demos.git
+
+check_docker
+check_cf_cli
+check_bluemix_cli
+
+pull_maven_image
 
 pushd $rootdir/samples/watson-springboot
+maven_compile_app
 
-echo "building the app using maven"
-docker run -v $PWD:/opt/myapp -w /opt/myapp -it --rm ibmcom/ibmjava:8-maven mvn package
-
-# cf login -a https://api.ng.bluemix.net
+check_login
+# bx login -a https://api.ng.bluemix.net
 
 echo "pushing the app"
-cf push -f maven_manifest.yml
-
+bx cf push -f maven_manifest.yml
 popd
+
+echo "Visit http://watson-springboot20.mybluemix.net to access the app."
