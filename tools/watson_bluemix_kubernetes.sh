@@ -34,6 +34,13 @@ check_container_registry() {
 	fi
 }
 
+check_kubernetes() {
+	if ! kubectl version --short | grep -w "Client" > /dev/null; then
+		echo "Kubernetes is not installed. Follow the instructions at https://kubernetes.io/docs/tasks/tools/install-kubectl/"
+		exit 1
+	fi
+}
+
 configure_cluster() {
 	bx cs workers watson-springboot > /dev/null
 	echo "setting cluster configuration"
@@ -79,6 +86,8 @@ docker push registry.ng.bluemix.net/ibmtest01/watson-springboot
 # bx cs cluster-create --name watson-springboot
 
 configure_cluster
+
+check_kubernetes
 
 echo "creating a Kubernetes deployment"
 kubectl run watson-springboot-deployment --image=registry.ng.bluemix.net/ibmtest01/watson-springboot
