@@ -1,0 +1,4 @@
+com/ibm/controllers/WatsonController.class
+com/ibm/WatsonSampleAppSpringBootApplication.class
+com/ibm/beans/Text.class
+com/ibm/beans/ImgDetail.class
