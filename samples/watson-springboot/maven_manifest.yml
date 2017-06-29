@@ -19,10 +19,10 @@ applications:
 - name: watson-springboot20
   memory: 512M
   instances: 1
-  buildpack: https://github.com/bharathappali/java-buildpack.git#ibmjava-watsondemo
+  buildpack: https://github.com/cloudfoundry/java-buildpack
   path: target/watson-springboot-0.0.1-SNAPSHOT.war
 env:
   FACEAPIKEY: 
   TEXTPASSWORD: 
   TEXTUSERNAME: 
-  JBP_CONFIG_COMPONENTS: '{jres: ["JavaBuildpack::Jre::IbmjavaJRE"]}'
+  JBP_CONFIG_COMPONENTS: '{jres: ["JavaBuildpack::Jre::IbmJRE"]}'
