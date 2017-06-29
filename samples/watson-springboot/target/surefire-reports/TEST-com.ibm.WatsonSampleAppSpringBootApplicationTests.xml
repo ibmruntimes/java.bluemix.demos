@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ibm.WatsonSampleAppSpringBootApplicationTests" time="0.028" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.vendor" value="IBM Corporation"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.boot.class.path" value="/opt/ibm/java/jre/lib/amd64/compressedrefs/jclSC180/vm.jar:/opt/ibm/java/jre/lib/se-service.jar:/opt/ibm/java/jre/lib/cuda4j.jar:/opt/ibm/java/jre/lib/math.jar:/opt/ibm/java/jre/lib/ibmorb.jar:/opt/ibm/java/jre/lib/ibmorbapi.jar:/opt/ibm/java/jre/lib/ibmcfw.jar:/opt/ibm/java/jre/lib/ibmpkcs.jar:/opt/ibm/java/jre/lib/ibmcertpathfw.jar:/opt/ibm/java/jre/lib/ibmjgssfw.jar:/opt/ibm/java/jre/lib/ibmjssefw.jar:/opt/ibm/java/jre/lib/ibmsaslfw.jar:/opt/ibm/java/jre/lib/ibmjcefw.jar:/opt/ibm/java/jre/lib/ibmjgssprovider.jar:/opt/ibm/java/jre/lib/ibmjsseprovider2.jar:/opt/ibm/java/jre/lib/ibmcertpathprovider.jar:/opt/ibm/java/jre/lib/xmldsigfw.jar:/opt/ibm/java/jre/lib/xml.jar:/opt/ibm/java/jre/lib/charsets.jar:/opt/ibm/java/jre/lib/resources.jar:/opt/ibm/java/jre/lib/rt.jar:/opt/ibm/java/jre/lib/dataaccess.jar"/>
+    <property name="sun.java2d.fontpath" value=""/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.runtime.version" value="pxa6480sr4fp5-20170421_01 (SR4 FP5)"/>
+    <property name="user.name" value="root"/>
+    <property name="java.compiler" value="j9jit28"/>
+    <property name="os.encoding" value="ANSI_X3.4-1968"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="user.language" value="en"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="/opt/ibm/java/jre/lib/amd64/compressedrefs:/opt/ibm/java/jre/lib/amd64"/>
+    <property name="sun.boot.library.path" value="/opt/ibm/java/jre/lib/amd64/compressedrefs:/opt/ibm/java/jre/lib/amd64"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="java.version" value="1.8.0"/>
+    <property name="user.timezone" value="UTC"/>
+    <property name="com.ibm.system.agent.path" value="/opt/ibm/java/jre/lib/amd64"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.zero.version" value="2"/>
+    <property name="java.endorsed.dirs" value="/opt/ibm/java/jre/lib/endorsed"/>
+    <property name="com.ibm.oti.vm.library.version" value="28"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="com.ibm.packed.version" value="2"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="user.country" value="US"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="java.home" value="/opt/ibm/java/jre"/>
+    <property name="java.vm.info" value="JRE 1.8.0 Linux amd64-64 Compressed References 20170419_344392 (JIT enabled, AOT enabled)&#10;J9VM - R28_20170419_1004_B344392&#10;JIT  - tr.r14.java_20170419_344392&#10;GC   - R28_20170419_1004_B344392_CMPRSS&#10;J9CL - 20170419_344392"/>
+    <property name="os.version" value="3.10.0-514.16.1.el7.x86_64"/>
+    <property name="java.awt.fonts" value=""/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.version" value="2.8"/>
+    <property name="java.util.prefs.PreferencesFactory" value="java.util.prefs.FileSystemPreferencesFactory"/>
+    <property name="user.variant" value=""/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="user.home" value="/root"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="java.library.path" value="/opt/ibm/java/jre/lib/amd64/compressedrefs:/opt/ibm/java/jre/lib/amd64:/usr/lib64:/usr/lib"/>
+    <property name="java.vendor.url" value="http://www.ibm.com/"/>
+    <property name="java.vm.vendor" value="IBM Corporation"/>
+    <property name="java.fullversion" value="JRE 1.8.0 IBM J9 2.8 Linux amd64-64 Compressed References 20170419_344392 (JIT enabled, AOT enabled)&#10;J9VM - R28_20170419_1004_B344392&#10;JIT  - tr.r14.java_20170419_344392&#10;GC   - R28_20170419_1004_B344392_CMPRSS&#10;J9CL - 20170419_344392"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.java.launcher.pid" value="1"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="maven.multiModuleProjectDirectory" value="/opt/myapp"/>
+    <property name="ibm.system.encoding" value="ANSI_X3.4-1968"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="java.ext.dirs" value="/opt/ibm/java/jre/lib/ext"/>
+    <property name="user.dir" value="/opt/myapp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.name" value="IBM J9 VM"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="com.ibm.oti.jcl.build" value="20170419_344392"/>
+  </properties>
+  <testcase name="contextLoads" classname="com.ibm.WatsonSampleAppSpringBootApplicationTests" time="0.028"/>
+</testsuite>

@@ -1,0 +1,4 @@
+/opt/myapp/src/main/java/com/ibm/controllers/WatsonController.java
+/opt/myapp/src/main/java/com/ibm/beans/ImgDetail.java
+/opt/myapp/src/main/java/com/ibm/beans/Text.java
+/opt/myapp/src/main/java/com/ibm/WatsonSampleAppSpringBootApplication.java
