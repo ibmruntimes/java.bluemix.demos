@@ -14,7 +14,8 @@
 # limitations under the License.
 #
 
-FROM alpine:3.5
+FROM ibmcom/ibmjava:8-sfj-alpine
+
 
 MAINTAINER Priyaranjan
 
@@ -29,28 +30,6 @@ RUN apk --update add --no-cache openssl ca-certificates \
     && tar -xf /tmp/gcc-libs.tar.xz -C /tmp/gcc \
     && mv /tmp/gcc/usr/lib/libgcc* /usr/glibc-compat/lib \
     && rm -rf /tmp/$GLIBC_VER.apk /tmp/gcc /tmp/gcc-libs.tar.xz /var/cache/apk/*
-
-ENV JAVA_VERSION 1.8.0_sr3fp12
-
-RUN ESUM="064e553d4bce75553d987ebd58e0331f24852d3f4e6b3da7fbeb670b057780b8" \
-    && BASE_URL="https://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/meta/" \
-    && YML_FILE="sfj/linux/x86_64/index.yml" \
-    && wget -q -U UA_IBM_JAVA_Docker -O /tmp/index.yml $BASE_URL/$YML_FILE \
-    && JAVA_URL=$(cat /tmp/index.yml | sed -n '/'$JAVA_VERSION'/{n;p}' | sed -n 's/\s*uri:\s//p' | tr -d '\r') \
-    && wget -q -U UA_IBM_JAVA_Docker -O /tmp/ibm-java.bin $JAVA_URL \
-    && echo "$ESUM  /tmp/ibm-java.bin" | sha256sum -c - \
-    && echo "INSTALLER_UI=silent" > /tmp/response.properties \
-    && echo "USER_INSTALL_DIR=/opt/ibm/java" >> /tmp/response.properties \
-    && echo "LICENSE_ACCEPTED=TRUE" >> /tmp/response.properties \
-    && mkdir -p /opt/ibm \
-    && chmod +x /tmp/ibm-java.bin \
-    && /tmp/ibm-java.bin -i silent -f /tmp/response.properties \
-    && rm -f /tmp/response.properties \
-    && rm -f /tmp/index.yml \
-    && rm -f /tmp/ibm-java.bin
-
-ENV JAVA_HOME=/opt/ibm/java/jre \
-    PATH=/opt/ibm/java/jre/bin:$PATH
 
 ENV TOMCAT_MAJOR=8 \
     TOMCAT_VERSION=8.5.3 \
