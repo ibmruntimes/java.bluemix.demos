@@ -2,6 +2,13 @@ This folder contains example scripts to build and deploy the sample applications
 
 Note: Before running any scripts follow the instruction in README of sample folders and obtain the credentials for the Watson Services.
 
+These demos assume that you have a Blumix account and the following installed on your system (Links with instructions to install are also provided.):
+Docker : https://docs.docker.com/engine/installation/
+CF CLI : https://github.com/cloudfoundry/cli#downloads
+IBM-Containers Plugin : Use the command <bx plugin install IBM-Containers -r Bluemix>
+Bluemix CLI : https://clis.ng.bluemix.net/ui/home.html
+
+
  * #### watson-bluemix-cf
    This script deploys the sample application to Cloud Foundry on Bluemix. The script first pulls the *ibmjava:8-maven* image and then uses this image to build the application. It then pushes the build application to Bluemix using CF Java Buildpack with IBM java. Before running the script move into the `sample/watson-springboot` directory  and open `maven_manifest.yml` file with a text editor and edit the following values with the credential obtained by you:<br/>
 - `FACEAPIKEY: <api_key>`
